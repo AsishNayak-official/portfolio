@@ -3,7 +3,7 @@ import Navbar from './Navbar'
 
 const index = () => {
   return (
-    <div className='w-full flex justify-end-safe'><Navbar/></div>
+    <div className='w-full flex justify-end-safe px-10 pt-5'><Navbar/></div>
   )
 }
 
