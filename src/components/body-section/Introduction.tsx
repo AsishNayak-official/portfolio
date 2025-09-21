@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import yellowCorner from "@/assets/yellowCorner.webp";
-import myPic from '@/assets/mypic-removebg.png'
 
 const webDevProcessKeywords = [
   "Requirement Gathering",

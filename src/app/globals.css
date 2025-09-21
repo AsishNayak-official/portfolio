@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 @theme inline {
@@ -19,12 +19,216 @@
   }
 }
 
+body {
+  cursor: none;
+}
+
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-marquee {
   display: inline-flex;
   animation: marquee 30s linear infinite;
+}
+
+/* --- Converted from SCSS for globals.css --- */
+
+/* Hamburger Menu and Animation Logic */
+.outer-menu .checkbox-toggle {
+  z-index: 2;
+}
+
+.outer-menu .hamburger {
+  z-index: 1;
+  backface-visibility: hidden;
+}
+
+.outer-menu .hamburger > div {
+  height: 0.125rem;
+  transition: all 0.4s ease;
+  -webkit-box-pack: center;
+}
+
+.outer-menu .hamburger > div:before,
+.outer-menu .hamburger > div:after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: -0.5rem;
+  height: 0.125rem;
+  background: inherit;
+  transition: all 0.4s ease;
+}
+
+.outer-menu .hamburger > div:after {
+  top: 0.5rem;
+}
+
+/* --- Checked State for Checkbox --- */
+
+/* Hamburger icon transforms into an 'X' */
+.outer-menu .checkbox-toggle:checked + .hamburger > div {
+  transform: rotate(90deg);
+}
+
+.outer-menu .checkbox-toggle:checked + .hamburger > div:before {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+.outer-menu .checkbox-toggle:checked + .hamburger > div:after {
+  top: 0;
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+/* Menu becomes visible */
+.outer-menu .checkbox-toggle:checked ~ .menu {
+  pointer-events: auto;
+  visibility: visible !important;
+}
+
+.outer-menu .checkbox-toggle:checked ~ .menu > div {
+  transform: scale(1);
+  transition-duration: 0.75s;
+}
+
+.outer-menu .checkbox-toggle:checked ~ .menu > div > div {
+  opacity: 1;
+  transition: opacity 0.4s ease 0.4s;
+}
+
+/* Hover effect on checkbox */
+.outer-menu .checkbox-toggle:hover + .hamburger > div {
+  transform: rotate(120deg);
+}
+
+/* SoundBars Styling */
+.outer-menu .soundBars {
+  position: absolute; /* Corrected from display: absolute */
+  height: 24px;
+  width: 24px;
+  border-radius: 100%;
+}
+
+.outer-menu .soundBars span {
+  background: linear-gradient(to right);
+  margin: auto 1px 0;
+  height: 100%;
+  width: 2px;
+  transform: scaleY(0.99);
+  transform-origin: bottom;
+  box-shadow: 0 4px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease-in-out;
+}
+
+/* Different height bars */
+.outer-menu .soundBars span:nth-child(1) {
+  transform: scaleY(0.8);
+}
+.outer-menu .soundBars span:nth-child(2) {
+  transform: scaleY(0.6);
+}
+.outer-menu .soundBars span:nth-child(4) {
+  transform: scaleY(0.4);
+}
+
+/* Animation when 'play' class is active */
+.outer-menu .soundBars.play > span {
+  animation: sound-bars-animation 2s infinite alternate-reverse;
+}
+
+/* Scatter animations */
+.outer-menu .soundBars.play > span:nth-child(1) {
+  animation-delay: 0.4s;
+}
+.outer-menu .soundBars.play > span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.outer-menu .soundBars.play > span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.outer-menu .soundBars.play > span:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+/* Hover effect on SoundBars */
+.outer-menu .soundBars:before {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  background: #fff;
+  border-radius: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.outer-menu .soundBars:hover:before {
+  width: calc(15% + 24px);
+  height: calc(50% + 24px);
+  opacity: 1;
+}
+
+.outer-menu .soundBars:hover > span {
+  background: #000;
+}
+
+/* Menu Styling */
+.outer-menu .menu {
+  backface-visibility: hidden;
+  outline: 0.0625rem solid transparent;
+}
+
+.outer-menu .menu > div {
+  width: 240vw;
+  height: 240vw;
+  transform: scale(0);
+  will-change: transform;
+  border-radius: 50%;
+  transition: all 0.4s ease;
+  backface-visibility: hidden;
+  background: rgba(20, 20, 20, 0.6);
+}
+
+.outer-menu .menu > div > div {
+  max-width: 90vw;
+  transition: opacity 0.4s ease;
+}
+
+.outer-menu .menu > div ul li a {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 50%,
+    #8b31ff 51%,
+    #7000ff 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.3s ease; /* Added transition for smooth hover */
+}
+
+.outer-menu .menu > div ul li a:hover {
+  background-position: 100% 0;
+}
+
+/* --- IMPORTANT: Add this animation definition --- */
+@keyframes sound-bars-animation {
+  0% {
+    transform: scaleY(0.1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
 }
