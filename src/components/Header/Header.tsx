@@ -56,7 +56,7 @@ const Header = ({ children }: HeaderProps): JSX.Element => {
             type="checkbox"
             onClick={handleClick}
           />
-          <div className="hamburger w-6 h-6 flex items-center justify-center">
+          <div className="hamburger w-6 h-6 flex items-center justify-center cursor-none">
             <div className="relative flex-none w-full bg-white duration-300 flex items-center justify-center" />
           </div>
           {children}

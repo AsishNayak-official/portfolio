@@ -48,6 +48,9 @@ export const TYPED_STRINGS = [
   "I build things for the web",
   "I create aesthetic and modern apps",
 ];
+export const TYPING_SPEED = 100; // ms per character
+export const DELETING_SPEED = 50;  // ms per character (faster)
+export const PAUSE_DURATION = 1500;
 
 export const SOCIAL_LINKS = [
   {

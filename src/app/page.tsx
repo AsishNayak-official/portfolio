@@ -1,6 +1,7 @@
 // import Hacker from "@/components/hacker-section";
-
+"use client"
 import Header from "@/components/Header/Header";
+import Intro from "@/components/Header/Hero/Intro";
 import Menu from "@/components/Header/Menu/Menu";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         >
           DEV
         </div>
+        <Intro/>
       </main>
     </>
   );
